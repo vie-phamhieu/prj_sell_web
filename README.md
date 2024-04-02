@@ -1,6 +1,8 @@
 ## Tạo Database bằng Docker
 ```
 docker-compose up -d
+docker ps // kiểm tra trạng thái
+docker-compose down // dừng hoặc xóa
 ```
 ## Cài đặt python django
 ```
