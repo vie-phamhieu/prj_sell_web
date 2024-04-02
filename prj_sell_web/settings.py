@@ -54,7 +54,7 @@ ROOT_URLCONF = 'prj_sell_web.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [BASE_DIR / 'home_page/templates'],  # Thêm đường dẫn đến thư mục chứa template của ứng dụng home_page
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -67,6 +67,7 @@ TEMPLATES = [
     },
 ]
 
+
 WSGI_APPLICATION = 'prj_sell_web.wsgi.application'
 
 
@@ -75,8 +76,12 @@ WSGI_APPLICATION = 'prj_sell_web.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'my_database',
+        'USER': 'root',
+        'PASSWORD': 'admin',
+        'HOST': 'db',  # Thay 'localhost' thành 'db' để trỏ đến container MySQL
+        'PORT': '3307',  # Port bạn đã liên kết với container MySQL
     }
 }
 
